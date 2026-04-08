@@ -1,4 +1,24 @@
 @namespace("ru.yandex.practicum.avro")
 protocol HubEventProtocol {
 
+	enum DeviceType {
+		MOTION_SENSOR,
+		TEMPERATURE_SENSOR,
+		LIGHT_SENSOR
+	}
+
+	record DeviceAddedEvent {
+		string id;
+		DeviceType type;
+	}
+
+	record DeviceRemovedEvent {
+		string id;
+	}
+
+	record HubEvent {
+		string hub_id;
+		timestamp_ms timestamp;
+		union { DeviceAddedEvent, DeviceRemovedEvent } payload;
+	}
 }

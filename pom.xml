@@ -23,9 +23,11 @@
     <dependencies>
 
         <!-- Добавьте необходимую зависимость       -->
-
-
-        <!-- .......   -->
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -62,18 +64,19 @@
 
             <plugin>
                 <!--   Добавьте координаты необходимого плагина     -->
-
-                <!-- .......   -->
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
                 <version>${avro.version}</version>
                 <executions>
                     <execution>
                         <id>schemas</id>
 
                         <!--  Добавьте настройки фазы и цели -->
-
-
-
-                        <!-- .......   -->
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                            <goal>idl-protocol</goal>
+                        </goals>
 
                         <configuration>
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
