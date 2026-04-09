@@ -1,0 +1,13 @@
+ru\yandex\practicum\proto\order\PaymentInfo$1.class
+ru\yandex\practicum\assignment\ProtobufAssignment.class
+ru\yandex\practicum\proto\order\OrderStatus.class
+ru\yandex\practicum\proto\order\Order.class
+ru\yandex\practicum\proto\order\Order$Builder.class
+ru\yandex\practicum\proto\order\OrderStatus$1.class
+ru\yandex\practicum\proto\order\OrderOuterClass.class
+ru\yandex\practicum\proto\order\PaymentInfo$Builder.class
+ru\yandex\practicum\proto\order\Order$1.class
+ru\yandex\practicum\proto\order\OrderOrBuilder.class
+ru\yandex\practicum\proto\order\PaymentInfoOrBuilder.class
+ru\yandex\practicum\proto\order\Order$PaymentOrReturnCase.class
+ru\yandex\practicum\proto\order\PaymentInfo.class

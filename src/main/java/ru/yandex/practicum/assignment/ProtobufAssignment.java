@@ -22,9 +22,9 @@ public class ProtobufAssignment {
         //----------------------------------------------------------------
 
         // сериализуйте экземпляр класса Order сохраненный в переменной order
-        byte[] serializedData = ...;
+        byte[] serializedData = order.toByteArray();
         // десериализуйте массив байт из переменной bytes
-        Order deserializedOrder = ...;
+        Order deserializedOrder = Order.parseFrom(bytes);
 
         //----------------------------------------------------------------
 

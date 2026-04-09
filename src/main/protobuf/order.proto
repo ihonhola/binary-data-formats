@@ -8,3 +8,33 @@ option java_multiple_files = true;
 option java_package = "ru.yandex.practicum.proto.order";
 
 // Опишите схему в соответствии с заданием
+
+// Перечисление статусов заказа
+enum OrderStatus {
+  UNKNOWN = 0;
+  PENDING = 1;
+  SHIPPED = 2;
+  DELIVERED = 3;
+  CANCELLED = 4;
+}
+
+// Информация о платеже
+message PaymentInfo {
+  string payment_id = 1;
+  string method = 2;
+  double amount = 3;                     // 64-битное число с плавающей точкой
+  google.protobuf.Timestamp payment_date = 4;
+}
+
+// Заказ
+message Order {
+  string order_id = 1;
+  repeated string product_id = 2;
+  OrderStatus status = 3;
+  google.protobuf.Timestamp order_date = 4;
+
+  oneof payment_or_return {
+    PaymentInfo payment_info = 5;
+    string return_reason = 6;
+  }
+}
